@@ -5,11 +5,11 @@ Returns the path to the tmp directory.
 The returned value depends on the operating system and is either a string,
 containing a value from the following table, or `null`.
 
-| Platform | Value      | Example                                |
-| -------- | ---------- | -------------------------------------- |
-| Linux    | `TMPDIR`   | /tmp                                   |
-| macOS    | `TMPDIR`   | /var/folders/xx/xxxxxx/T/              |
-| Windows  | `{TMP}`    | C:\Users\justjavac\AppData\Local\Temp  |
+| Platform | Value    | Example                               |
+| -------- | -------- | ------------------------------------- |
+| Linux    | `TMPDIR` | /tmp                                  |
+| macOS    | `TMPDIR` | /var/folders/xx/xxxxxx/T/             |
+| Windows  | `{TMP}`  | C:\Users\justjavac\AppData\Local\Temp |
 
 ## Usage
 
