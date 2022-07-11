@@ -11,7 +11,21 @@
  */
 export default function home_dir(): string | null {
   switch (Deno.build.os) {
-    case "linux":
+    case "linux": {
+      const xdg = Deno.env.get("XDG_RUNTIME_DIR");
+      if (xdg) return `${xdg}-/tmp`;
+
+      const tmpDir = Deno.env.get("TMPDIR");
+      if (tmpDir) return tmpDir;
+
+      const tempDir = Deno.env.get("TEMP");
+      if (tempDir) return tempDir;
+
+      const tmp = Deno.env.get("TMP");
+      if (tmp) return tmp;
+
+      return "/var/tmp";
+    }
     case "darwin":
       return Deno.env.get("TMPDIR") ?? null;
     case "windows":
